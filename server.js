@@ -13,19 +13,21 @@ mongoose.connect(
 //require('./src/models/Product');
 requireDir('./src/models');
 
-const Product = mongoose.model('Product');
+//const Product = mongoose.model('Product');
 
-// Primeira rota
-app.get('/', (request, response) => {
+// // Primeira rota
+// app.get('/', (request, response) => {
 
-    Product.create({ 
-        title: 'React native',
-        description: 'Build native apps with Reactive',
-        url: "http://github.com/facebook/react-native"
-    });
+//     Product.create({ 
+//         title: 'React native',
+//         description: 'Build native apps with Reactive',
+//         url: "http://github.com/facebook/react-native"
+//     });
 
-    console.log("Console log: Teste");
-    return response.send("<h1>Welcome to the Jungle!!!</h1>");
-});
+//     console.log("Console log: Teste");
+//     return response.send("<h1>Welcome to the Jungle!!!</h1>");
+// });
+
+app.use('/api', require("./src/routes"));
 
 app.listen(3001);
